@@ -12,7 +12,15 @@ MV dùng trực tiếp file MP3 do người dùng cung cấp, đã chép nguyên
 
 52 dòng phụ đề tiếng Việt được chuyển từ bản thu và canh theo thời gian giọng hát. Phần dạo nhạc không hiển thị lời. Nút CC bật/tắt phụ đề; khi tua hoặc tạm dừng, phụ đề dùng cùng đồng hồ với MP3. Nội dung phụ đề ở `dist/lyrics.js`; bản WebVTT ở `dist/subtitles/vi.vtt`. Bản dịch chọn cách xưng hô anh/em để phù hợp câu chuyện. Thời gian câu hát dựa trên nhận dạng âm thanh, đã sửa nội dung theo ngữ cảnh; có thể tiếp tục tinh chỉnh mốc từng câu khi dựng bản cuối.
 
-35 cảnh dùng nhịp dựng tham chiếu 4:48, được quy đổi theo thời lượng MP3 để kết thúc cùng nhạc. Tệp nhạc hiện chỉ được phục vụ trong bản local; chưa cập nhật bản hosted với MP3.
+35 cảnh dùng nhịp dựng tham chiếu 4:48, được quy đổi theo thời lượng MP3 để kết thúc cùng nhạc. Tệp nhạc được phát trực tiếp cùng bản MV, không cần mở YouTube.
+
+## GitHub Pages
+
+Repository: https://github.com/buihuuthinh2018/cham-thoi-minh-con-ca-doi
+
+Địa chỉ MV: https://buihuuthinh2018.github.io/cham-thoi-minh-con-ca-doi/
+
+Workflow `.github/workflows/pages.yml` chạy các kiểm tra rồi triển khai thư mục `dist/` khi push vào `main`. Có thể triển khai lại từ Actions → Deploy MV to GitHub Pages → Run workflow. Trong Settings → Pages, nguồn xuất bản là GitHub Actions. Mọi đường dẫn hình, nhạc và phụ đề đều tương đối để chạy trong thư mục con của Pages.
 
 ## Câu chuyện
 
