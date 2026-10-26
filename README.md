@@ -6,13 +6,13 @@ MV hoạt hình chibi không lời thoại, vẽ bằng Canvas 2D rồi chiếu 
 
 Từ thư mục dự án: `python -m http.server 4174 --bind 127.0.0.1 --directory dist` rồi mở http://127.0.0.1:4174/ . Python chỉ phục vụ các tệp tĩnh; phim, đồ họa và âm nhạc đều chạy bằng JavaScript trong trình duyệt. Có thể dùng bất kỳ máy chủ HTTP tĩnh nào.
 
-## Âm nhạc
+## Âm nhạc và phụ đề
 
-Nút “Xem MV cùng nhạc” mở bản cover Meader Music, giọng hát Yaning Tien: https://www.youtube.com/watch?v=FreZ0f-To-o . Nguồn đăng cho phép dùng video/âm thanh kèm liên kết ghi nguồn; giao diện đã ghi rõ tác giả và dẫn về kênh. Bản thu chính thức được thử nhưng bị chặn nhúng (YouTube 150); MV chính thức dài hơn bài hát nên không dùng làm nhạc nền mặc định. Liên kết tới MV của Karen Mok vẫn có ở giao diện: https://www.youtube.com/watch?v=kqqraGvoqVs .
+MV dùng trực tiếp file MP3 do người dùng cung cấp, đã chép nguyên vẹn vào `dist/audio/cham-cham-thich-em.mp3` (226.533875 giây). Nhấn “Xem MV cùng nhạc” để bắt đầu âm thanh và phim cùng lúc. Không có iframe, API hoặc trình phát YouTube. Có thể xem không nhạc hoặc chọn tệp khác bằng điều khiển sẵn có. Python chỉ phục vụ tệp tĩnh; phát nhạc dùng HTML Audio.
 
-Không có bản nhạc giả hoặc nhạc tổng hợp thay thế. Trình phát nhúng phụ thuộc mạng và việc YouTube cho phép phát trong trình duyệt. Có thể chọn tệp nhạc hợp lệ trên máy; tệp chỉ được đọc bằng Object URL trong trình duyệt, không tải lên máy chủ. “Xem hình ảnh trước” là chế độ không có âm thanh, được ghi rõ trong giao diện. Bản cover được kiểm tra phát thành công, thời lượng trình phát 3:46.
+52 dòng phụ đề tiếng Việt được chuyển từ bản thu và canh theo thời gian giọng hát. Phần dạo nhạc không hiển thị lời. Nút CC bật/tắt phụ đề; khi tua hoặc tạm dừng, phụ đề dùng cùng đồng hồ với MP3. Nội dung phụ đề ở `dist/lyrics.js`; bản WebVTT ở `dist/subtitles/vi.vtt`. Bản dịch chọn cách xưng hô anh/em để phù hợp câu chuyện. Thời gian câu hát dựa trên nhận dạng âm thanh, đã sửa nội dung theo ngữ cảnh; có thể tiếp tục tinh chỉnh mốc từng câu khi dựng bản cuối.
 
-35 cảnh có nhịp dựng tham chiếu 4 phút 48 giây. Khi thời lượng bản nhạc được đọc, thời gian phim được quy đổi theo tổng thời lượng bản thu. Các thao tác phát, dừng và tua dùng đồng hồ của nguồn âm thanh. Đây là đồng bộ theo thời lượng, chưa phải dựng khớp từng nhịp hoặc từng câu hát cho mọi bản cover.
+35 cảnh dùng nhịp dựng tham chiếu 4:48, được quy đổi theo thời lượng MP3 để kết thúc cùng nhạc. Tệp nhạc hiện chỉ được phục vụ trong bản local; chưa cập nhật bản hosted với MP3.
 
 ## Câu chuyện
 

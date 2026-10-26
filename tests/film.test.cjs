@@ -11,7 +11,7 @@ function run(at){
   class AudioMock{constructor(){this.paused=true;this.currentTime=0;this.duration=240;}addEventListener(){}pause(){this.paused=true;}async play(){this.paused=false;}}
   const sandbox={console,URL,URLSearchParams,Float32Array,performance:{now:()=>0},setTimeout,clearTimeout,Audio:AudioMock,location:{search:`?t=${at}`,origin:'http://localhost'},requestAnimationFrame:fn=>nextFrame=fn,document:{activeElement:element(),createElement:element,querySelector(selector){if(!elements.has(selector))elements.set(selector,element());return elements.get(selector);},querySelectorAll(){return [];},head:{appendChild(){}}},window:{addEventListener(){},devicePixelRatio:1}};
   vm.createContext(sandbox);
-  for(const name of ['motion.js','timeline.js','soundtrack.js','film.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),sandbox,{filename:name});
+  for(const name of ['motion.js','timeline.js','lyrics.js','soundtrack.js','film.js'])vm.runInContext(fs.readFileSync(path.join(root,name),'utf8'),sandbox,{filename:name});
   nextFrame(1000);assert.equal(depth,0,'Every drawing must restore the Canvas stack');assert.ok(draws>100);
   return sandbox;
 }
@@ -26,4 +26,3 @@ for(let t=0;t<4;t+=.1){const a=m.travel(100,500,t,0,4);assert.ok(a.x>=100&&a.x<=
 const sound=vm.runInContext('new LoveSoundtrack()',first);sound.silent();sound.play(12);assert.equal(sound.time(),12);sound.seek(50);assert.equal(sound.time(),50);sound.pause();assert.equal(sound.time(),50);assert.equal(sound.playing,false);
 sound.kind='file';assert.equal(sound.duration,240);sound.seek(120);assert.equal(sound.time(),120);sound.play(80);assert.equal(sound.time(),80);sound.pause();assert.equal(sound.playing,false);
 console.log(`PASS: ${timeline.shots.length} shots × 3 poses, ending, Canvas balance, finite coordinates, travel and soundtrack seek/pause.`);
-
