@@ -32,6 +32,10 @@ Workflow `.github/workflows/pages.yml` chạy các kiểm tra rồi triển khai
 
 ## Điều khiển và kiểm tra
 
+Trên điện thoại, nhấn **Xem toàn màn hình** bên dưới phim hoặc biểu tượng ⛶ ở góc trên. Player dùng fullscreen của trình duyệt khi có thể; nếu không hỗ trợ, player vẫn phủ kín vùng xem của trang. Trình duyệt có thể giữ thanh địa chỉ trong chế độ dự phòng. Trên điện thoại đang dọc, khung phim tự xoay ngang; nút **↻ Xoay** cho phép đổi lại. Xoay thiết bị ngang để dùng chiều rộng màn hình. Nhạc và phụ đề tiếp tục cùng vị trí khi đổi chế độ.
+
+Chạm vào phim để ẩn/hiện điều khiển, dùng **✕ Thu nhỏ** để thoát. Điều khiển tự ẩn sau 3,5 giây khi đang phát; khi tạm dừng sẽ hiện lại. Bố cục dùng kích thước vùng xem thực tế, giữ tỉ lệ phim 16:9 và chừa vùng an toàn cho điều khiển. `node tests/viewer.test.cjs` kiểm tra fullscreen và chế độ dự phòng, xoay khung phim, khôi phục cuộn, phản hồi trễ và các kích thước điện thoại/máy tính bảng.
+
 Thanh tua, phát/tạm dừng, tắt tiếng, toàn màn hình, chọn khoảnh khắc. Space phát/dừng; mũi tên tua 5 giây khi không ở trong điều khiển. `?t=120` mở một khung hình ở giây tham chiếu 120 để xem bố cục. Canvas 2D tự thay thế khi WebGL không khả dụng.
 
 `node tests/film.test.cjs` kiểm tra tính liên tục của các cảnh, 3 tư thế trong mỗi cảnh, tọa độ hữu hạn, cân bằng Canvas, vận tốc bước chân và phát/dừng/tua của đồng hồ xem trước.
